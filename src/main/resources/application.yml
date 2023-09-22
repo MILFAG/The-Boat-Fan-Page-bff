@@ -1,0 +1,58 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwk:
+          key-set-uri: ${JWK_URL:http://localhost:8080/realms/dacs/protocol/openid-connect/certs}
+      aud:
+        active: 'false'
+        values: 'USUARIORUS,TEST,ANOTHERAUD'
+
+logging:
+  level:
+    root: info
+management:
+  security:
+    enabled: false
+  endpoints:
+    enabled-by-default: false
+    web:
+      base-path: /metrics
+      exposure:
+        include: "health,info"
+  endpoint:
+    info:
+      enabled: true
+    health:
+      enabled: true
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 60000
+        loggerLevel: basic
+      msApiConectorClient:
+        url: '${MS_CONECTOR_URL:http://localhost:9002}/conector'
+       
+dacs:
+  exceptions:
+    code-prefix: 'DACS-BFF'
+  cors:
+    allowed-origins: "*"
+    allowed-methods: GET,POST,PUT,PATCH,DELETE,OPTIONS
+    allowed-headers: "*"
+    max-age: 3600
+  oauth2:
+    service-account:
+      auth: ${IDP_URL:http://localhost:8080/realms/dacs/protocol/openid-connect}
+      client-id: 'backend-bffportalproveedores'
+      secret: 'Sr0kjLfRbg8XKLSu9hmDaUZH7cugcVvP'
+      login:
+        url: ${IDP_LOGIN_URL:http://localhost:8080/realms/dacs/protocol/openid-connect}
+        client-id: ${IDP_CLIENT_ID:frontend-portalproveedores}
+  
+server:
+  port :  ${BFF_PORT:9001}
+  servlet:
+    contextPath: /bff
