@@ -32,8 +32,12 @@ feign:
         connectTimeout: 60000
         readTimeout: 60000
         loggerLevel: basic
-      msApiConectorClient:
-        url: '${MS_CONECTOR_URL:http://localhost:9002}/conector'
+      msBackend:
+        url: "http://localhost:9003/backend"
+      msConectorContenido:
+        url: "http://localhost:9002/api-contenido"
+      msConectorEstadisticas:
+        url: "http://localhost:9004/api-estadisticas"
        
 dacs:
   exceptions:
