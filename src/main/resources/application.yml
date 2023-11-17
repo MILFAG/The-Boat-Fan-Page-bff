@@ -33,7 +33,7 @@ feign:
         readTimeout: 60000
         loggerLevel: basic
       msBackend:
-        url: "http://localhost:9003/backend"
+        url: "http://localhost:9003/"
       msConectorContenido:
         url: "http://localhost:9002/api-contenido"
       msConectorEstadisticas:
@@ -59,4 +59,4 @@ dacs:
 server:
   port :  ${BFF_PORT:9001}
   servlet:
-    contextPath: /bff
+    contextPath: /
