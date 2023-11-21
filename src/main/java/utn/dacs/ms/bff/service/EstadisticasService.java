@@ -7,6 +7,7 @@ import utn.dacs.ms.bff.dto.EstadisticasDTO;
 import utn.dacs.ms.bff.dto.PartidaDTO;
 import utn.dacs.ms.bff.dto.RespuestaDTO;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 @Service
@@ -43,8 +44,9 @@ public class EstadisticasService {
         estadisticasDTO.setACS(Math.floorDiv(parcialPuntaje,cantPartidas));
         estadisticasDTO.setKd(parcialKD/cantPartidas);
         estadisticasDTO.setPorcHs(parcialHs/cantPartidas);
-        estadisticasDTO.setDeltaDaño(Math.floorDiv(parcialDeltaDaño,cantPartidas));
+        estadisticasDTO.setDeltaDanio(Math.floorDiv(parcialDeltaDaño,cantPartidas));
         estadisticasDTO.setPorcVictorias(partidasGanadas/cantPartidas);
+        estadisticasDTO.setUltimaPartida(partidas.get(partidas.size()-1).getMetadata().getInicio());
         return estadisticasDTO;
     }
 

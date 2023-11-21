@@ -10,8 +10,10 @@ public class EstadisticasDTO {
     int ACS;
     float kd;
     float porcHs;
-    int deltaDaño;
+    int deltaDanio;
     float porcVictorias;
+    String ultimaPartida;
+
 
 
 }
