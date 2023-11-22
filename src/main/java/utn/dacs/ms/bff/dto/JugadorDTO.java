@@ -12,7 +12,7 @@ public class JugadorDTO {
     private String tag;
     private String nombre;
     private String apellido;
-    private Date fechaNacimiento;
+    private String fechaNacimiento;
     private String nombreAgente;
 
 

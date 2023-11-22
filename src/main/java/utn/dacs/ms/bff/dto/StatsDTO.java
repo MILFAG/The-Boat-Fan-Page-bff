@@ -1,6 +1,7 @@
 package utn.dacs.ms.bff.dto;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
@@ -27,6 +28,11 @@ public class StatsDTO {
     @JsonAlias("assists")
     @JsonProperty("asistencias")
     int asistencias;
+
+    @JsonAlias("character")
+    @JsonProperty("agente")
+    AgenteDTO agente;
+
     @JsonAlias("shots")
     @JsonProperty("disparos")
     DisparosDTO disparos;

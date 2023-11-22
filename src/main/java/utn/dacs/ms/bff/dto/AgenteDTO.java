@@ -2,16 +2,18 @@ package utn.dacs.ms.bff.dto;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
 public class AgenteDTO {
-    @JsonAlias("uuid")
+    @JsonAlias({"uuid","id"})
     @JsonProperty("id")
     String id;
-    @JsonAlias("displayName")
+    @JsonAlias({"displayName", "name"})
     @JsonProperty("nombre")
     String nombre;
     @JsonAlias("description")
