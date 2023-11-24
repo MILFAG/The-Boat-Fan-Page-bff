@@ -6,8 +6,8 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
 public class SponsorDTO {
-    private Long idSponsor;
+    private Long id;
     private String nombre;
     private String logo;
-    private String nivelSponsor;
+    private String nivel;
 }
