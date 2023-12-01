@@ -10,5 +10,8 @@ import java.util.List;
 public class EncuentroDTO {
     private Long id;
     private Date fecha;
-    private List<JugadorDTO> jugadores;
+    private String rival;
+    private String imagenRival;
+
+  //  private List<JugadorDTO> jugadores;
 }
