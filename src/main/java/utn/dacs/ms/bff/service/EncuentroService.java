@@ -24,6 +24,10 @@ public class EncuentroService {
     public EncuentroDTO modificarEncuentro(EncuentroDTO encuentro){
         return  msBackend.modificarEncuentro(encuentro);
     }
+    public List<EncuentroDTO> proximos(){
+        return  msBackend.proximos();
+    }
+
     public String eliminarEncuentro(int id){
         return msBackend.eliminarEncuentro(id);
     }

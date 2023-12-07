@@ -50,6 +50,8 @@ public interface MsBackend {
     //////////////////////////////////////////////////////////////////////////////////////////
     @GetMapping("/encuentros")
     public List<EncuentroDTO> encuentros();
+    @GetMapping("/encuentros/proximos")
+    public List<EncuentroDTO> proximos();
     @GetMapping("/encuentros/{id}")
     public EncuentroDTO encuentro(@PathVariable int id);
     @PostMapping("/encuentros")

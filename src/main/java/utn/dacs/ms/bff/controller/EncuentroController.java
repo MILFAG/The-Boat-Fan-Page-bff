@@ -22,6 +22,11 @@ public class EncuentroController {
         return encuentroService.encuentros();
     }
 
+    @GetMapping("/encuentros/proximos")
+    public List<EncuentroDTO> proximos(){
+        return encuentroService.proximos();
+    }
+
     @GetMapping("/encuentros/{id}")
     public EncuentroDTO encuentro(@PathVariable int id) {
         return encuentroService.encuentro(id);
